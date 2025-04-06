@@ -3,7 +3,17 @@
     "name": "Simple Toggle Sites",
     "version": "1.0.0",
     "description": "A very basic extension to quickly block or allow a list or allow a list of websites.",
+    "permissions":[
+        "storage",
+        "webRequest",
+        "declarativeNetRequest"
+    ],
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "type" : "block"
+    },
+    "condition" : {
+      "urlFilter" : "||google.com",
+      "resourceTypes" : ["main_frame"]
     }
 }
