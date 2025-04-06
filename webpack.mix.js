@@ -4,7 +4,10 @@
 
 let mix = require('laravel-mix');
 mix.setPublicPath('./')
-    .sass('src/assets/popup.scss','dist/css')
+    .postCss('src/assets/popup.scss', 'dist/css', [
+        require('tailwindcss'),
+    ])
     .options({
-        processCssUrls: false
+        processCssUrls: false,
+        postCss: [require('tailwindcss')],
     })
